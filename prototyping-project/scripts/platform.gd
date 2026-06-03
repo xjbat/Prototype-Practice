@@ -2,7 +2,7 @@ extends AnimatableBody2D
 
 const SPEED = 200
 
-@export var starting_pos:= Vector2(0, 0)
+var starting_pos: Vector2
 @export var ending_pos:= Vector2(-100, 0)
 var desired_pos = starting_pos
 
@@ -16,6 +16,7 @@ func switch_to_end():
 	print("received")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	starting_pos = position
 	Global.deactivate_platform.connect(switch_to_start)
 	Global.activate_platform.connect(switch_to_end)
 	print("connected")

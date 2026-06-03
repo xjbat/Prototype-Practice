@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://soxheoyxi3m0"]
 
-[ext_resource type="Script" uid="uid://e6l22ueoqt1w" path="res://grow_collectible.gd" id="1_1pbu2"]
-[ext_resource type="Texture2D" uid="uid://bt8028rbbwm2s" path="res://Sprites/Green-Square.png" id="2_77c85"]
+[ext_resource type="Script" uid="uid://e6l22ueoqt1w" path="res://scripts/grow_collectible.gd" id="1_b1417"]
+[ext_resource type="Texture2D" uid="uid://bt8028rbbwm2s" path="res://Sprites/Green-Square.png" id="2_1oiu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrar1"]
 size = Vector2(32, 32)
 
 [node name="Grow Collectible" type="Area2D" unique_id=1391926658]
-script = ExtResource("1_1pbu2")
+script = ExtResource("1_b1417")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=339328887]
-texture = ExtResource("2_77c85")
+texture = ExtResource("2_1oiu2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=918966652]
 shape = SubResource("RectangleShape2D_yrar1")

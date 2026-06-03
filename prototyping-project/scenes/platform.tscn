@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://chlvdfdgwo8c"]
 
-[ext_resource type="Script" uid="uid://snyphuesk73d" path="res://platform.gd" id="1_s8bxr"]
-[ext_resource type="Texture2D" uid="uid://wdl4l5geon0w" path="res://Sprites/Grey-Square.png" id="2_c1gtx"]
+[ext_resource type="Script" uid="uid://snyphuesk73d" path="res://scripts/platform.gd" id="1_nlgqw"]
+[ext_resource type="Texture2D" uid="uid://wdl4l5geon0w" path="res://Sprites/Grey-Square.png" id="2_507ja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ry5bi"]
 size = Vector2(118, 21)
 
 [node name="Platform" type="AnimatableBody2D" unique_id=1933243116]
-script = ExtResource("1_s8bxr")
+script = ExtResource("1_nlgqw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2014891806]
 position = Vector2(1.9073486e-06, -2.5)
 scale = Vector2(3.6875, 0.65625)
-texture = ExtResource("2_c1gtx")
+texture = ExtResource("2_507ja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067687417]
 position = Vector2(0, -2.5)
