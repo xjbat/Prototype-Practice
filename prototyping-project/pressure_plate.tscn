@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://21kwp8kqbqjg"]
+
+[ext_resource type="Texture2D" uid="uid://cumhmpjslvgcp" path="res://Sprites/pressure-plate.png" id="1_8bqyo"]
+[ext_resource type="Script" uid="uid://5r5bo4m74456" path="res://activation_switch.gd" id="2_djmga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6ob"]
+size = Vector2(60, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhvrj"]
+size = Vector2(51, 27)
+
+[node name="Pressure Plate" type="StaticBody2D" unique_id=1730207416]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=798670471]
+position = Vector2(-2.3841858e-07, 2.3841858e-07)
+scale = Vector2(1.875, 0.78125)
+texture = ExtResource("1_8bqyo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=677803147]
+shape = SubResource("RectangleShape2D_ec6ob")
+
+[node name="Activation Switch" type="Area2D" parent="." unique_id=1069084918]
+script = ExtResource("2_djmga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Activation Switch" unique_id=1349557858]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_lhvrj")
+
+[connection signal="body_entered" from="Activation Switch" to="Activation Switch" method="_on_body_entered"]
+[connection signal="body_exited" from="Activation Switch" to="Activation Switch" method="_on_body_exited"]

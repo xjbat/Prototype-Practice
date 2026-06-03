@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://csxy6rnew80cf"]
+
+[ext_resource type="Script" uid="uid://c14yrh7jxbaey" path="res://shrink_collectible.gd" id="1_radlw"]
+[ext_resource type="Texture2D" uid="uid://bmgcj5yxeqtjf" path="res://Sprites/Red-Square.png" id="2_6juhe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1liuw"]
+size = Vector2(32, 32)
+
+[node name="Shrink Collectible" type="Area2D" unique_id=56697476]
+script = ExtResource("1_radlw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=923523436]
+texture = ExtResource("2_6juhe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=558796913]
+shape = SubResource("RectangleShape2D_1liuw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
