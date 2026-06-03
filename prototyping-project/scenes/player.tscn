@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://boy1u2l6v5lir"]
+
+[ext_resource type="Script" uid="uid://bwnbjs0is3nnm" path="res://scripts/player.gd" id="1_4flbx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sh265"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
+
+[node name="Player" type="CharacterBody2D" unique_id=953066698 node_paths=PackedStringArray("player_mesh", "player_collision")]
+position = Vector2(-16, -1)
+script = ExtResource("1_4flbx")
+fat_jump_velocity = -150.0
+fat_speed = 200.0
+fat_acceleration = 2.0
+fat_deceleration = 5.0
+skinny_jump_velocity = -300.0
+player_mesh = NodePath("MeshInstance2D")
+player_collision = NodePath("CollisionShape2D")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1348764219]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_sh265")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1897673777]
+shape = SubResource("CircleShape2D_4flbx")

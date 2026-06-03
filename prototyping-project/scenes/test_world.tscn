@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://juvkop0vl3mu"]
+
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_kyfjp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcg8s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyfjp"]
+
+[node name="test_world" type="Node2D" unique_id=2086187862]
+
+[node name="wall1" type="StaticBody2D" parent="." unique_id=74320426]
+position = Vector2(-207.99998, 0)
+rotation = 1.5707964
+scale = Vector2(58.56086, 0.59289634)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="wall1" unique_id=385786295]
+modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
+rotation = 3.1415927
+scale = Vector2(19.886282, 19.88628)
+mesh = SubResource("BoxMesh_vcg8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=745953464]
+shape = SubResource("RectangleShape2D_kyfjp")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=342748824]
+scale = Vector2(58.56086, 0.59289634)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="floor" unique_id=2916051]
+modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
+rotation = 3.1415927
+scale = Vector2(19.886282, 19.88628)
+mesh = SubResource("BoxMesh_vcg8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1737943733]
+shape = SubResource("RectangleShape2D_kyfjp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=652355512]
+
+[node name="Player" parent="." unique_id=953066698 instance=ExtResource("1_kyfjp")]
+position = Vector2(0, -27)
