@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://juvkop0vl3mu"]
+[gd_scene format=3 uid="uid://d1n3n758ggwmy"]
 
-[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_kyfjp"]
-[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://scenes/shrink_collectible.tscn" id="4_xwrkq"]
-[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/grow_collectible.tscn" id="5_nrstc"]
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_lrqlo"]
+[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://scenes/shrink_collectible.tscn" id="2_sqa0i"]
+[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/grow_collectible.tscn" id="3_jh1ax"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vcg8s"]
 
@@ -38,7 +38,7 @@ mesh = SubResource("BoxMesh_vcg8s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level 1/floor" unique_id=1737943733]
 shape = SubResource("RectangleShape2D_kyfjp")
 
-[node name="Player" parent="Level 1" unique_id=953066698 instance=ExtResource("1_kyfjp")]
+[node name="Player" parent="Level 1" unique_id=953066698 instance=ExtResource("1_lrqlo")]
 z_index = 1
 position = Vector2(0, -27)
 fat_jump_velocity = -250.0
@@ -48,13 +48,13 @@ thin_jump_velocity = -400.0
 thin_acceleration = 100.0
 thin_deceleration = 100.0
 
-[node name="Shrink Collectible" parent="Level 1" unique_id=56697476 instance=ExtResource("4_xwrkq")]
+[node name="Shrink Collectible" parent="Level 1" unique_id=56697476 instance=ExtResource("2_sqa0i")]
 position = Vector2(-142, -71)
 
-[node name="Grow Collectible" parent="Level 1" unique_id=1391926658 instance=ExtResource("5_nrstc")]
+[node name="Grow Collectible" parent="Level 1" unique_id=1391926658 instance=ExtResource("3_jh1ax")]
 position = Vector2(36, -68)
 
-[node name="Grow Collectible2" parent="Level 1" unique_id=179590930 instance=ExtResource("5_nrstc")]
+[node name="Grow Collectible2" parent="Level 1" unique_id=179590930 instance=ExtResource("3_jh1ax")]
 position = Vector2(-51, -69)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=652355512]
