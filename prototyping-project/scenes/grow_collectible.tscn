@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://soxheoyxi3m0"]
 
 [ext_resource type="Script" uid="uid://e6l22ueoqt1w" path="res://scripts/grow_collectible.gd" id="1_b1417"]
-[ext_resource type="Texture2D" uid="uid://bt8028rbbwm2s" path="res://Sprites/Green-Square.png" id="2_1oiu2"]
+[ext_resource type="Texture2D" uid="uid://dgkqrebyaba5s" path="res://Sprites/Cheeseburger.png" id="2_b1417"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrar1"]
 size = Vector2(32, 32)
@@ -10,7 +10,8 @@ size = Vector2(32, 32)
 script = ExtResource("1_b1417")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=339328887]
-texture = ExtResource("2_1oiu2")
+scale = Vector2(2, 2)
+texture = ExtResource("2_b1417")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=918966652]
 shape = SubResource("RectangleShape2D_yrar1")

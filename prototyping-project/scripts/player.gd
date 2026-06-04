@@ -54,6 +54,8 @@ func set_player_fat():
 	Global.playerState = Global.PlayerStates.FAT
 	
 func _ready() -> void:
+	#make make sure player in thin when starting
+	set_player_thin()
 	Global.grow.connect(set_player_fat)
 	Global.shrink.connect(set_player_thin)
 

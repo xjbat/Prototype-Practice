@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cfo4r3fnfd4fk"]
+
+[ext_resource type="Script" uid="uid://c8lpklo7dsypq" path="res://scripts/level_change_collectable.gd" id="1_fjncw"]
+[ext_resource type="Texture2D" uid="uid://djwgxd4gu8o8h" path="res://Sprites/Flag.png" id="2_4ttkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1liuw"]
+size = Vector2(32, 32)
+
+[node name="Level change" type="Area2D" unique_id=56697476]
+script = ExtResource("1_fjncw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=558796913]
+shape = SubResource("RectangleShape2D_1liuw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=573357109]
+scale = Vector2(2, 2)
+texture = ExtResource("2_4ttkf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

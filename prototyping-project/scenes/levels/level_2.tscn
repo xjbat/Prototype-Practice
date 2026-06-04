@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ixbqpxyji34"]
+
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_fiq81"]
+[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://scenes/shrink_collectible.tscn" id="2_l37oo"]
+[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/grow_collectible.tscn" id="3_qpwj6"]
+[ext_resource type="PackedScene" uid="uid://cfo4r3fnfd4fk" path="res://scenes/level_change_collectable.tscn" id="4_ibugp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcg8s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyfjp"]
+
+[node name="Level 2" type="Node2D" unique_id=2059983578]
+
+[node name="wall1" type="StaticBody2D" parent="." unique_id=847690767]
+position = Vector2(-207.99998, 0)
+rotation = 1.5707964
+scale = Vector2(58.56086, 0.59289634)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="wall1" unique_id=1495422419]
+modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
+rotation = 3.1415927
+scale = Vector2(19.886282, 19.88628)
+mesh = SubResource("BoxMesh_vcg8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=1785730272]
+shape = SubResource("RectangleShape2D_kyfjp")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1809876735]
+scale = Vector2(58.56086, 0.59289634)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="floor" unique_id=148920880]
+modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
+rotation = 3.1415927
+scale = Vector2(19.886282, 19.88628)
+mesh = SubResource("BoxMesh_vcg8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1537799747]
+shape = SubResource("RectangleShape2D_kyfjp")
+
+[node name="Player" parent="." unique_id=953066698 instance=ExtResource("1_fiq81")]
+z_index = 1
+position = Vector2(0, -27)
+fat_acceleration = 20.0
+fat_deceleration = 20.0
+
+[node name="Shrink Collectible" parent="." unique_id=56697476 instance=ExtResource("2_l37oo")]
+position = Vector2(-142, -71)
+
+[node name="Grow Collectible" parent="." unique_id=1391926658 instance=ExtResource("3_qpwj6")]
+position = Vector2(36, -68)
+
+[node name="Grow Collectible2" parent="." unique_id=1932064995 instance=ExtResource("3_qpwj6")]
+position = Vector2(-51, -69)
+
+[node name="Level change" parent="." unique_id=1013849507 instance=ExtResource("4_ibugp")]
+position = Vector2(262, -22)
+
+[node name="Label" type="Label" parent="." unique_id=2000866769]
+offset_left = -27.0
+offset_top = -138.0
+offset_right = 27.0
+offset_bottom = -115.0
+text = "Level 2"

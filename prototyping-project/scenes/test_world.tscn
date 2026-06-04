@@ -45,7 +45,7 @@ z_index = 1
 position = Vector2(0, -27)
 
 [node name="Pressure Plate" parent="." unique_id=1730207416 instance=ExtResource("3_dvny0")]
-position = Vector2(169, -9)
+position = Vector2(189, -23)
 
 [node name="Shrink Collectible" parent="." unique_id=56697476 instance=ExtResource("4_xwrkq")]
 position = Vector2(-142, -71)
