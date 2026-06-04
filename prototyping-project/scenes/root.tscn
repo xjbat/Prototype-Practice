@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://d1n3n758ggwmy"]
+
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_lrqlo"]
+[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://scenes/shrink_collectible.tscn" id="2_sqa0i"]
+[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/grow_collectible.tscn" id="3_jh1ax"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcg8s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyfjp"]
+
+[node name="root" type="Node2D" unique_id=2086187862]
+
+[node name="Level 1" type="Node2D" parent="." unique_id=1344100404]
+
+[node name="wall1" type="StaticBody2D" parent="Level 1" unique_id=74320426]
+position = Vector2(-207.99998, 0)
+rotation = 1.5707964
+scale = Vector2(58.56086, 0.59289634)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Level 1/wall1" unique_id=385786295]
+modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
+rotation = 3.1415927
+scale = Vector2(19.886282, 19.88628)
+mesh = SubResource("BoxMesh_vcg8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level 1/wall1" unique_id=745953464]
+shape = SubResource("RectangleShape2D_kyfjp")
+
+[node name="floor" type="StaticBody2D" parent="Level 1" unique_id=342748824]
+scale = Vector2(58.56086, 0.59289634)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Level 1/floor" unique_id=2916051]
+modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
+rotation = 3.1415927
+scale = Vector2(19.886282, 19.88628)
+mesh = SubResource("BoxMesh_vcg8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level 1/floor" unique_id=1737943733]
+shape = SubResource("RectangleShape2D_kyfjp")
+
+[node name="Player" parent="Level 1" unique_id=953066698 instance=ExtResource("1_lrqlo")]
+z_index = 1
+position = Vector2(0, -27)
+fat_jump_velocity = -250.0
+fat_acceleration = 20.0
+fat_deceleration = 20.0
+thin_jump_velocity = -400.0
+thin_acceleration = 100.0
+thin_deceleration = 100.0
+
+[node name="Shrink Collectible" parent="Level 1" unique_id=56697476 instance=ExtResource("2_sqa0i")]
+position = Vector2(-142, -71)
+
+[node name="Grow Collectible" parent="Level 1" unique_id=1391926658 instance=ExtResource("3_jh1ax")]
+position = Vector2(36, -68)
+
+[node name="Grow Collectible2" parent="Level 1" unique_id=179590930 instance=ExtResource("3_jh1ax")]
+position = Vector2(-51, -69)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=652355512]
+zoom = Vector2(1.75, 1.75)
