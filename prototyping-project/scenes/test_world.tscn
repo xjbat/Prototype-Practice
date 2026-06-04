@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://juvkop0vl3mu"]
 
 [ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_kyfjp"]
-[ext_resource type="PackedScene" uid="uid://chlvdfdgwo8c" path="res://scenes/platform.tscn" id="2_ynswa"]
 [ext_resource type="PackedScene" uid="uid://21kwp8kqbqjg" path="res://scenes/pressure_plate.tscn" id="3_dvny0"]
 [ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://scenes/shrink_collectible.tscn" id="4_xwrkq"]
 [ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/grow_collectible.tscn" id="5_nrstc"]
+[ext_resource type="PackedScene" uid="uid://dufeu5vbmfutf" path="res://scenes/platform_node_2d.tscn" id="5_ynswa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vcg8s"]
 
@@ -43,15 +43,6 @@ shape = SubResource("RectangleShape2D_kyfjp")
 [node name="Player" parent="." unique_id=953066698 instance=ExtResource("1_kyfjp")]
 z_index = 1
 position = Vector2(0, -27)
-fat_jump_velocity = -250.0
-fat_deceleration = 2.0
-thin_jump_velocity = -400.0
-thin_acceleration = 100.0
-thin_deceleration = 100.0
-
-[node name="Platform" parent="." unique_id=1933243116 instance=ExtResource("2_ynswa")]
-position = Vector2(445, -222)
-ending_pos = Vector2(250, 0)
 
 [node name="Pressure Plate" parent="." unique_id=1730207416 instance=ExtResource("3_dvny0")]
 position = Vector2(169, -9)
@@ -64,3 +55,14 @@ position = Vector2(36, -68)
 
 [node name="Grow Collectible2" parent="." unique_id=179590930 instance=ExtResource("5_nrstc")]
 position = Vector2(-51, -69)
+
+[node name="platform_Node2d" parent="." unique_id=169987887 instance=ExtResource("5_ynswa")]
+position = Vector2(284, -154)
+
+[node name="Platform" parent="platform_Node2d" index="0" unique_id=1933243116]
+position = Vector2(210, -38)
+
+[node name="end_pos" parent="platform_Node2d" index="1" unique_id=1426210587]
+position = Vector2(-22, 144)
+
+[editable path="platform_Node2d"]

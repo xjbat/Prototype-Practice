@@ -67,7 +67,7 @@ func _physics_process(delta):
 		Global.PlayerStates.THIN:
 			thin_movement()
 		_:
-			push_warning("current_player_state is invalid!")
+			push_warning("PlayerState is invalid!")
 			return
 	
 	#if Input.is_action_just_pressed("debug_00"):

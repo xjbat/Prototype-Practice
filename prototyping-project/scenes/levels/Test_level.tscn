@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dxsyuak2q1rp2"]
+
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_m1062"]
+[ext_resource type="PackedScene" uid="uid://21kwp8kqbqjg" path="res://scenes/pressure_plate.tscn" id="2_yvd3h"]
+[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/grow_collectible.tscn" id="4_4kme6"]
+[ext_resource type="PackedScene" uid="uid://dufeu5vbmfutf" path="res://scenes/platform_node_2d.tscn" id="4_fot55"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4kme6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fot55"]
+
+[node name="Test_level" type="Node2D" unique_id=411692225]
+
+[node name="Pressure Plate" parent="." unique_id=1730207416 instance=ExtResource("2_yvd3h")]
+position = Vector2(-425, -15)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1140628564]
+
+[node name="Player" parent="." unique_id=953066698 instance=ExtResource("1_m1062")]
+position = Vector2(-547, -24)
+
+[node name="platform_Node2d" parent="." unique_id=169987887 instance=ExtResource("4_fot55")]
+position = Vector2(-34, -104)
+
+[node name="Platform" parent="platform_Node2d" index="0" unique_id=1933243116]
+position = Vector2(0, 107)
+
+[node name="end_pos" parent="platform_Node2d" index="1" unique_id=1426210587]
+position = Vector2(-268, 104)
+
+[node name="level_geometry" type="Node2D" parent="." unique_id=1035895596]
+
+[node name="floor2" type="StaticBody2D" parent="level_geometry" unique_id=130476493]
+position = Vector2(-488.00003, 7)
+scale = Vector2(13.721373, 1.1247582)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="level_geometry/floor2" unique_id=826215070]
+modulate = Color(0.4745098, 0.4509804, 0.4745098, 1)
+scale = Vector2(19.873703, 19.873703)
+mesh = SubResource("BoxMesh_4kme6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_geometry/floor2" unique_id=146185219]
+shape = SubResource("RectangleShape2D_fot55")
+
+[node name="floor3" type="StaticBody2D" parent="level_geometry" unique_id=204181001]
+position = Vector2(170.00002, 1.9999999)
+scale = Vector2(13.721373, 1.1247582)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="level_geometry/floor3" unique_id=2059473666]
+modulate = Color(0.4745098, 0.4509804, 0.4745098, 1)
+scale = Vector2(19.873703, 19.873703)
+mesh = SubResource("BoxMesh_4kme6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_geometry/floor3" unique_id=1047016307]
+shape = SubResource("RectangleShape2D_fot55")
+
+[node name="collectibles" type="Node2D" parent="." unique_id=1444591617]
+
+[node name="Grow Collectible" parent="collectibles" unique_id=1391926658 instance=ExtResource("4_4kme6")]
+position = Vector2(-425, -55)
+
+[editable path="platform_Node2d"]

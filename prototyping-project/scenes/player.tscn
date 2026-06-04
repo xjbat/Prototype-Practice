@@ -9,11 +9,13 @@
 [node name="Player" type="CharacterBody2D" unique_id=953066698 node_paths=PackedStringArray("player_mesh", "player_collision")]
 position = Vector2(-16, -1)
 script = ExtResource("1_4flbx")
-fat_jump_velocity = -150.0
+fat_jump_velocity = -250.0
 fat_speed = 200.0
 fat_acceleration = 2.0
-fat_deceleration = 5.0
-skinny_jump_velocity = -300.0
+fat_deceleration = 2.0
+thin_jump_velocity = -400.0
+thin_acceleration = 100.0
+thin_deceleration = 100.0
 player_mesh = NodePath("MeshInstance2D")
 player_collision = NodePath("CollisionShape2D")
 

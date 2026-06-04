@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dufeu5vbmfutf"]
+
+[ext_resource type="PackedScene" uid="uid://chlvdfdgwo8c" path="res://scenes/platform.tscn" id="1_0oymi"]
+
+[node name="platform_Node2d" type="Node2D" unique_id=169987887]
+
+[node name="Platform" parent="." unique_id=1933243116 node_paths=PackedStringArray("end_Node2D") instance=ExtResource("1_0oymi")]
+end_Node2D = NodePath("../end_pos")
+
+[node name="end_pos" type="Node2D" parent="." unique_id=1426210587]

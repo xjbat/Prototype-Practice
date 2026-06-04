@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*uid://bae4pahhmeuk3"
 
+[dotnet]
+
+project/assembly_name="Prototyping Project"
+
 [input]
 
 up={
