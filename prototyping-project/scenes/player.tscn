@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://boy1u2l6v5lir"]
 
-[ext_resource type="Script" uid="uid://bwnbjs0is3nnm" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bwnbjs0is3nnm" path="res://Scripts/player.gd" id="1_v0iea"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sh265"]
 
@@ -8,7 +8,7 @@
 
 [node name="Player" type="CharacterBody2D" unique_id=953066698 node_paths=PackedStringArray("player_mesh", "player_collision")]
 position = Vector2(-16, -1)
-script = ExtResource("1_4flbx")
+script = ExtResource("1_v0iea")
 fat_jump_velocity = -250.0
 fat_speed = 200.0
 fat_acceleration = 2.0
