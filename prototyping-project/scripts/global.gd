@@ -3,9 +3,13 @@ extends Node
 enum PlayerStates {THIN, FAT}
 var playerState = PlayerStates.THIN
 
+@warning_ignore("unused_signal")
 signal grow
+@warning_ignore("unused_signal")
 signal shrink
+@warning_ignore("unused_signal")
 signal activate_platform
+@warning_ignore("unused_signal")
 signal deactivate_platform
 @onready var root = get_node("../root")   
 @export var scenes = []
@@ -20,8 +24,11 @@ func _ready() -> void:
 	change_scene()
 
 func change_scene():
-	current_scene.queue_free()
 	scene_index += 1
-	current_scene = scenes[scene_index].instantiate()
-	root.call_deferred("add_child", current_scene)
+	if (scene_index >= len(scenes)):
+		push_warning("No next scene available")
+	else:
+		current_scene.queue_free()
+		current_scene = scenes[scene_index].instantiate()
+		root.call_deferred("add_child", current_scene)
 	
