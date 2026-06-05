@@ -5,39 +5,48 @@ extends CharacterBody2D
 @export var fat_speed := 100.0
 @export var fat_acceleration := 1.0
 @export var fat_deceleration := 10.0
+@export var fat_texture: Texture2D
 
 @export_category("thin")
 @export var thin_jump_velocity := -200.0
 @export var thin_speed := 300.0
 @export var thin_acceleration := 2.0
 @export var thin_deceleration := 10.0
+@export var thin_texture: Texture2D
 
 @export_category("other")
 @export var player_mesh : MeshInstance2D
 @export var player_collision : CollisionShape2D
 
+const player_scale_val := 1.3
+
 #TODO make this less fucked, good enough for now though!
 func fat_movement():
-	if Input.is_action_just_pressed("up") and is_on_floor():
-		velocity.y = fat_jump_velocity
-	
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		velocity.x = move_toward(velocity.x, direction * fat_speed, fat_acceleration)
-	else:
-		velocity.x = move_toward(velocity.x, 0, fat_deceleration)
+	movement(fat_jump_velocity, fat_speed, fat_acceleration, fat_deceleration)
 
 func thin_movement():
+	movement(thin_jump_velocity, thin_speed, thin_acceleration, thin_deceleration)
+	
+func movement(jump_velocity, speed, acceleration, deceleration):
 	if Input.is_action_just_pressed("up") and is_on_floor():
-		velocity.y = thin_jump_velocity
+		velocity.y = jump_velocity
 	
 	var direction = Input.get_axis("left", "right")
 	if direction:
-		#direction * thin_speed
-		velocity.x = move_toward(velocity.x, direction * thin_speed, thin_acceleration)
+		#direction * speed
+		velocity.x = move_toward(velocity.x, direction * speed, acceleration)
+		
+		# Godot doesn't flip x so flip y and rotate
+		if (direction == 1.0):
+			rotation = PI
+			scale.y = -player_scale_val
+		elif (direction == -1.0):
+			rotation = 0.0
+			scale.y = player_scale_val
+			
+			
 	else:
-		velocity.x = move_toward(velocity.x, 0, thin_deceleration)
-
+		velocity.x = move_toward(velocity.x, 0, deceleration)
 #TODO If a player scales in a small space weird behavior can occur, we should consider adding a check of some sort
 func scale_player(size: float):
 	print(player_mesh.scale.x, " : ", player_mesh.scale.y, " : ", player_collision.shape.radius)
@@ -46,11 +55,13 @@ func scale_player(size: float):
 	player_collision.shape.radius = size
 
 func set_player_thin():
-	scale_player(10)
+	player_collision.scale.x = 1.0
 	Global.playerState = Global.PlayerStates.THIN
+	player_mesh.texture = thin_texture
 
 func set_player_fat():
-	scale_player(20)
+	player_collision.scale.x = 3.0
+	player_mesh.texture = fat_texture
 	Global.playerState = Global.PlayerStates.FAT
 	
 func _ready() -> void:
