@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://juvkop0vl3mu"]
 
-[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_kyfjp"]
-[ext_resource type="PackedScene" uid="uid://21kwp8kqbqjg" path="res://scenes/pressure_plate.tscn" id="3_dvny0"]
-[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://scenes/shrink_collectible.tscn" id="4_xwrkq"]
-[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/grow_collectible.tscn" id="5_nrstc"]
-[ext_resource type="PackedScene" uid="uid://dufeu5vbmfutf" path="res://scenes/platform_node_2d.tscn" id="5_ynswa"]
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://Scenes/player.tscn" id="1_kyfjp"]
+[ext_resource type="PackedScene" uid="uid://21kwp8kqbqjg" path="res://Scenes/pressure_plate.tscn" id="3_dvny0"]
+[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://Scenes/shrink_collectible.tscn" id="4_xwrkq"]
+[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://Scenes/grow_collectible.tscn" id="5_nrstc"]
+[ext_resource type="PackedScene" uid="uid://dufeu5vbmfutf" path="res://Scenes/platform_node_2d.tscn" id="5_ynswa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vcg8s"]
 

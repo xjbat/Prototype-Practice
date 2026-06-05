@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://csxy6rnew80cf"]
 
-[ext_resource type="Script" uid="uid://c14yrh7jxbaey" path="res://scripts/shrink_collectible.gd" id="1_1jhp2"]
-[ext_resource type="Texture2D" uid="uid://d15ahuxe03noi" path="res://Sprites/Dumble.png" id="2_1jhp2"]
+[ext_resource type="Script" uid="uid://c14yrh7jxbaey" path="res://Scripts/shrink_collectible.gd" id="1_ht4wi"]
+[ext_resource type="Texture2D" uid="uid://d15ahuxe03noi" path="res://Sprites/Dumble.png" id="2_4ojdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1liuw"]
 size = Vector2(32, 32)
 
 [node name="Shrink Collectible" type="Area2D" unique_id=56697476]
-script = ExtResource("1_1jhp2")
+script = ExtResource("1_ht4wi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=923523436]
 scale = Vector2(2, 2)
-texture = ExtResource("2_1jhp2")
+texture = ExtResource("2_4ojdx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=558796913]
 shape = SubResource("RectangleShape2D_1liuw")
