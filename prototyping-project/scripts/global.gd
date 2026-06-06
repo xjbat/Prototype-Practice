@@ -34,6 +34,7 @@ func change_scene():
 		current_scene = scenes[scene_index].instantiate()
 		root.call_deferred("add_child", current_scene)
 	
+#returns the audio player so you can connect signals, As seen in the level change collectible. 
 func play_audio(file: AudioStreamMP3, position: Vector2, volume: float):
 	var audio = world_audio.play_audio(file, position, volume)
 	return audio
