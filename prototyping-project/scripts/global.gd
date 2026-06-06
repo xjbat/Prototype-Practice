@@ -3,6 +3,8 @@ extends Node
 enum PlayerStates {THIN, FAT}
 var playerState = PlayerStates.THIN
 
+var world_audio : Node2D
+
 @warning_ignore("unused_signal")
 signal grow
 @warning_ignore("unused_signal")
@@ -32,3 +34,6 @@ func change_scene():
 		current_scene = scenes[scene_index].instantiate()
 		root.call_deferred("add_child", current_scene)
 	
+func play_audio(file: AudioStreamMP3, position: Vector2, volume: float):
+	var audio = world_audio.play_audio(file, position, volume)
+	return audio

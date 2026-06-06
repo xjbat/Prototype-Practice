@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c8lpklo7dsypq" path="res://Scripts/level_change_collectable.gd" id="1_ehcap"]
 [ext_resource type="Texture2D" uid="uid://djwgxd4gu8o8h" path="res://Sprites/Flag.png" id="2_5ijt1"]
+[ext_resource type="AudioStream" uid="uid://46muukc8a608" path="res://Sounds/victory.mp3" id="2_dpk4o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1liuw"]
 size = Vector2(32, 32)
 
 [node name="Level change" type="Area2D" unique_id=56697476]
 script = ExtResource("1_ehcap")
+victory_sound = ExtResource("2_dpk4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=558796913]
 shape = SubResource("RectangleShape2D_1liuw")
