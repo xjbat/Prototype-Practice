@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://bae4pahhmeuk3"]
 
-[ext_resource type="Script" uid="uid://jiou577ohvp6" path="res://Scripts/global.gd" id="1_6q3x5"]
-[ext_resource type="PackedScene" uid="uid://buvdxqs3gfxf7" path="res://Scenes/levels/level_1.tscn" id="2_opebo"]
-[ext_resource type="PackedScene" uid="uid://ixbqpxyji34" path="res://Scenes/levels/level_2.tscn" id="3_m3l3d"]
+[ext_resource type="Script" uid="uid://jiou577ohvp6" path="res://scripts/global.gd" id="1_6q3x5"]
+[ext_resource type="PackedScene" uid="uid://buvdxqs3gfxf7" path="res://scenes/levels/level_1.tscn" id="2_opebo"]
+[ext_resource type="PackedScene" uid="uid://ixbqpxyji34" path="res://scenes/levels/level_2.tscn" id="3_m3l3d"]
+[ext_resource type="Texture2D" uid="uid://cvi0gr8dimnmq" path="res://Sprites/restart-arrow.png" id="4_m3l3d"]
 
 [node name="Global" type="Node2D" unique_id=1344559823]
 script = ExtResource("1_6q3x5")
 scenes = [ExtResource("2_opebo"), ExtResource("3_m3l3d")]
+
+[node name="Restart Button" type="Button" parent="." unique_id=886888373]
+offset_left = -301.0
+offset_top = -172.0
+offset_right = -261.0
+offset_bottom = -132.0
+icon = ExtResource("4_m3l3d")
+
+[connection signal="pressed" from="Restart Button" to="." method="_on_restart_button_pressed"]
