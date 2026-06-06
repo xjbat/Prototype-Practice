@@ -1,5 +1,6 @@
 extends Node2D
 
+#May need to be increased depending on how many audios are playing at once
 @export var audio_player_count := 8
 var audio_streams : Array[AudioStreamPlayer2D] = []
 
@@ -15,6 +16,8 @@ func get_audio():
 			continue
 		return stream
 
+#Each audio file should be set per object, An audio database script could be used
+#but I think that's probably more headache than it's worth.
 func play_audio(file: AudioStreamMP3, position: Vector2, volume: float):
 	var audio = get_audio()
 	audio.stream = file
