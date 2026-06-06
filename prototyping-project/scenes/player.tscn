@@ -28,7 +28,7 @@ player_collision = NodePath("CollisionShape2D")
 position = Vector2(0, 5.465714e-15)
 rotation = 3.1415927
 mesh = SubResource("PlaneMesh_qhqgy")
-texture = ExtResource("2_qhqgy")
+texture = ExtResource("3_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1897673777]
 position = Vector2(-0.5769232, 0)

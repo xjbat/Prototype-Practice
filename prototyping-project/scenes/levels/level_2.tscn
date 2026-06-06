@@ -1,63 +1,63 @@
 [gd_scene format=3 uid="uid://ixbqpxyji34"]
 
-[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://Scenes/player.tscn" id="1_fiq81"]
-[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://Scenes/shrink_collectible.tscn" id="2_l37oo"]
-[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://Scenes/grow_collectible.tscn" id="3_qpwj6"]
-[ext_resource type="PackedScene" uid="uid://cfo4r3fnfd4fk" path="res://Scenes/level_change_collectable.tscn" id="4_ibugp"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_vcg8s"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyfjp"]
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="1_fiq81"]
+[ext_resource type="PackedScene" uid="uid://d4m72sj71hs0k" path="res://scenes/level creation/floor.tscn" id="1_ibugp"]
+[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://scenes/level creation/shrink_collectible.tscn" id="2_l37oo"]
+[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/level creation/grow_collectible.tscn" id="3_qpwj6"]
+[ext_resource type="PackedScene" uid="uid://cfo4r3fnfd4fk" path="res://scenes/level_change_collectable.tscn" id="4_ibugp"]
+[ext_resource type="PackedScene" uid="uid://igwhstcefvky" path="res://scenes/void.tscn" id="5_8qukl"]
+[ext_resource type="PackedScene" uid="uid://lu80s0wfs7hi" path="res://scenes/level creation/wall.tscn" id="7_3p04p"]
+[ext_resource type="PackedScene" uid="uid://dufeu5vbmfutf" path="res://scenes/level creation/platform_node_2d.tscn" id="8_3p04p"]
+[ext_resource type="PackedScene" uid="uid://21kwp8kqbqjg" path="res://scenes/level creation/pressure_plate.tscn" id="9_qsp8v"]
 
 [node name="Level 2" type="Node2D" unique_id=2059983578]
 
-[node name="wall1" type="StaticBody2D" parent="." unique_id=847690767]
-position = Vector2(-207.99998, 0)
-rotation = 1.5707964
-scale = Vector2(58.56086, 0.59289634)
+[node name="floor" parent="." unique_id=589596903 instance=ExtResource("1_ibugp")]
+position = Vector2(-754, -0.99999994)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="wall1" unique_id=1495422419]
-modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
-rotation = 3.1415927
-scale = Vector2(19.886282, 19.88628)
-mesh = SubResource("BoxMesh_vcg8s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=1785730272]
-shape = SubResource("RectangleShape2D_kyfjp")
-
-[node name="floor" type="StaticBody2D" parent="." unique_id=1809876735]
-scale = Vector2(58.56086, 0.59289634)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="floor" unique_id=148920880]
-modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
-rotation = 3.1415927
-scale = Vector2(19.886282, 19.88628)
-mesh = SubResource("BoxMesh_vcg8s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1537799747]
-shape = SubResource("RectangleShape2D_kyfjp")
+[node name="floor2" parent="." unique_id=109401761 instance=ExtResource("1_ibugp")]
+position = Vector2(790, -2.3841858e-07)
 
 [node name="Player" parent="." unique_id=953066698 instance=ExtResource("1_fiq81")]
 z_index = 1
-position = Vector2(0, -27)
+position = Vector2(-263, -41.000004)
+fat_jump_velocity = -180.0
 fat_acceleration = 20.0
 fat_deceleration = 20.0
 
-[node name="Shrink Collectible" parent="." unique_id=56697476 instance=ExtResource("2_l37oo")]
-position = Vector2(-142, -71)
-
 [node name="Grow Collectible" parent="." unique_id=1391926658 instance=ExtResource("3_qpwj6")]
-position = Vector2(36, -68)
-
-[node name="Grow Collectible2" parent="." unique_id=1932064995 instance=ExtResource("3_qpwj6")]
-position = Vector2(-51, -69)
+position = Vector2(-201, -23)
 
 [node name="Level change" parent="." unique_id=1013849507 instance=ExtResource("4_ibugp")]
-position = Vector2(262, -22)
+position = Vector2(278, -22)
 
-[node name="Label" type="Label" parent="." unique_id=2000866769]
+[node name="Label" type="Label" parent="." unique_id=58053624]
 offset_left = -27.0
 offset_top = -138.0
 offset_right = 27.0
 offset_bottom = -115.0
-text = "Level 2"
+
+[node name="Void" parent="." unique_id=269038081 instance=ExtResource("5_8qukl")]
+
+[node name="Shrink Collectible" parent="." unique_id=56697476 instance=ExtResource("2_l37oo")]
+position = Vector2(67, -23)
+
+[node name="wall1" parent="." unique_id=1320140272 instance=ExtResource("7_3p04p")]
+position = Vector2(-327.00003, 3)
+
+[node name="wall2" parent="." unique_id=886054121 instance=ExtResource("7_3p04p")]
+position = Vector2(327, 57)
+
+[node name="platform_Node2d" parent="." unique_id=169987887 instance=ExtResource("8_3p04p")]
+position = Vector2(174, -107)
+
+[node name="Platform" parent="platform_Node2d" index="0" unique_id=1933243116]
+position = Vector2(-10, 107)
+
+[node name="end_pos" parent="platform_Node2d" index="1" unique_id=1426210587]
+position = Vector2(-224, 107)
+
+[node name="Pressure Plate" parent="." unique_id=1730207416 instance=ExtResource("9_qsp8v")]
+position = Vector2(-139, -1)
+
+[editable path="platform_Node2d"]

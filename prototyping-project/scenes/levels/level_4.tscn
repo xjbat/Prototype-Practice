@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://f1p3ta5mvkpo"]
+
+[ext_resource type="PackedScene" uid="uid://d4m72sj71hs0k" path="res://scenes/level creation/floor.tscn" id="1_um320"]
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://scenes/player.tscn" id="2_glw47"]
+[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://scenes/level creation/grow_collectible.tscn" id="3_4wsov"]
+[ext_resource type="PackedScene" uid="uid://cfo4r3fnfd4fk" path="res://scenes/level_change_collectable.tscn" id="4_qvnao"]
+[ext_resource type="PackedScene" uid="uid://igwhstcefvky" path="res://scenes/void.tscn" id="5_hsvsk"]
+[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://scenes/level creation/shrink_collectible.tscn" id="6_fcb7b"]
+[ext_resource type="PackedScene" uid="uid://lu80s0wfs7hi" path="res://scenes/level creation/wall.tscn" id="7_ov8fk"]
+[ext_resource type="PackedScene" uid="uid://dufeu5vbmfutf" path="res://scenes/level creation/platform_node_2d.tscn" id="8_pmra4"]
+[ext_resource type="PackedScene" uid="uid://21kwp8kqbqjg" path="res://scenes/level creation/pressure_plate.tscn" id="9_1bx01"]
+
+[node name="Level 4" type="Node2D" unique_id=2059983578]
+
+[node name="floor" parent="." unique_id=589596903 instance=ExtResource("1_um320")]
+position = Vector2(-754, -0.99999994)
+
+[node name="floor2" parent="." unique_id=109401761 instance=ExtResource("1_um320")]
+position = Vector2(790, -2.3841858e-07)
+
+[node name="Player" parent="." unique_id=953066698 instance=ExtResource("2_glw47")]
+z_index = 1
+position = Vector2(-263, -41.000004)
+fat_jump_velocity = -180.0
+fat_acceleration = 20.0
+fat_deceleration = 20.0
+
+[node name="Grow Collectible" parent="." unique_id=1391926658 instance=ExtResource("3_4wsov")]
+position = Vector2(-201, -23)
+
+[node name="Level change" parent="." unique_id=1013849507 instance=ExtResource("4_qvnao")]
+position = Vector2(278, -22)
+
+[node name="Label" type="Label" parent="." unique_id=58053624]
+offset_left = -27.0
+offset_top = -138.0
+offset_right = 27.0
+offset_bottom = -115.0
+
+[node name="Void" parent="." unique_id=269038081 instance=ExtResource("5_hsvsk")]
+
+[node name="Shrink Collectible" parent="." unique_id=56697476 instance=ExtResource("6_fcb7b")]
+position = Vector2(-113, -40)
+
+[node name="wall1" parent="." unique_id=1320140272 instance=ExtResource("7_ov8fk")]
+position = Vector2(-327.00003, 3)
+
+[node name="wall2" parent="." unique_id=886054121 instance=ExtResource("7_ov8fk")]
+position = Vector2(327, 57)
+
+[node name="platform_Node2d" parent="." unique_id=169987887 instance=ExtResource("8_pmra4")]
+position = Vector2(174, -107)
+
+[node name="Platform" parent="platform_Node2d" index="0" unique_id=1933243116]
+position = Vector2(19, 108)
+
+[node name="end_pos" parent="platform_Node2d" index="1" unique_id=1426210587]
+position = Vector2(-178, 107)
+
+[node name="Pressure Plate" parent="." unique_id=1730207416 instance=ExtResource("9_1bx01")]
+position = Vector2(-139, -1)
+
+[editable path="platform_Node2d"]

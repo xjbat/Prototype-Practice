@@ -12,32 +12,31 @@ signal activate_platform
 @warning_ignore("unused_signal")
 signal deactivate_platform
 @onready var root = get_node("../root")   
-@export var scenes = []
+
 #hacky fix so level one loads first
-var scene_index = 0
+var starting_index = 0 # should normallly be set to 0
+var scene_index = starting_index
 var current_scene
 
 #changed from root.add_child() to call_deferred("add_child") to get the output to shut up
 func _ready() -> void:
-	current_scene = scenes[scene_index].instantiate()
-	root.call_deferred("add_child", current_scene)
-	reset_scene()
+	change_scene()
 
-func change_scene():
+func change_scene(do_reset: bool = false):
 	scene_index += 1
-	if (scene_index >= len(scenes)):
-		push_warning("No next scene available")
-		scene_index -= 1
-	else:
+	if (scene_index > starting_index + 1 or do_reset):
 		current_scene.queue_free()
-		current_scene = scenes[scene_index].instantiate()
-		root.call_deferred("add_child", current_scene)
+		print("freed")
+	else:
+		print("not freed")
+	
+	current_scene = load("res://scenes/levels/level_" + str(scene_index) + ".tscn")
+	current_scene = current_scene.instantiate()
+	root.call_deferred("add_child", current_scene)
 		
 func reset_scene():
 	scene_index -= 1
-	change_scene()
-
-
+	change_scene(true)
 
 func _on_restart_button_pressed() -> void:
 	reset_scene()

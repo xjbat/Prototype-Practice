@@ -14,16 +14,13 @@ func switch_to_start():
 	state = States.GO_TO_START
 func switch_to_end():
 	state = States.GO_TO_END
-	print("received")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	starting_pos = global_position
 	Global.deactivate_platform.connect(switch_to_start)
 	Global.activate_platform.connect(switch_to_end)
-	print("connected")
 	
 func move_to_position(target_position: Vector2, delta: float) -> void:
-	print("moving")
 	global_position = global_position.move_toward(target_position, SPEED * delta)
 	if (global_position == target_position):
 		state = States.STOP

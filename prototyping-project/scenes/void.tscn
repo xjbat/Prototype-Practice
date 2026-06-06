@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://igwhstcefvky"]
+
+[ext_resource type="Script" uid="uid://cgulqvjj5xrdy" path="res://void.gd" id="1_ccpoa"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ccpoa"]
+
+[node name="Void" type="Area2D" unique_id=269038081]
+script = ExtResource("1_ccpoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=225076829]
+position = Vector2(0, 400)
+scale = Vector2(100, 1)
+shape = SubResource("WorldBoundaryShape2D_ccpoa")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
