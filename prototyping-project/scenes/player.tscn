@@ -1,21 +1,24 @@
 [gd_scene format=3 uid="uid://boy1u2l6v5lir"]
 
-[ext_resource type="Script" uid="uid://bwnbjs0is3nnm" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bwnbjs0is3nnm" path="res://scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://iq4jvw87myp8" path="res://Sprites/fat-man.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://craeruemirrrs" path="res://Sprites/thin-man.png" id="3_dqkch"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qhqgy"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_g2els"]
 size = Vector2(26, 52)
 orientation = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(8.076923, 51.800003)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(7, 50)
 
-[node name="Player" type="CharacterBody2D" unique_id=953066698 node_paths=PackedStringArray("player_mesh", "player_collision")]
-scale = Vector2(-1.3, 1.3)
-script = ExtResource("1_4flbx")
-fat_acceleration = 0.5
-fat_deceleration = 0.5
+[node name="Player" type="CharacterBody2D" unique_id=953066698 node_paths=PackedStringArray("player_mesh", "player_collision") groups=["player"]]
+rotation = 3.1415927
+scale = Vector2(1, -1)
+script = ExtResource("1_v0iea")
+fat_jump_velocity = -250.0
+fat_speed = 200.0
+fat_acceleration = 2.0
+fat_deceleration = 2.0
 fat_texture = ExtResource("2_qhqgy")
 thin_jump_velocity = -400.0
 thin_acceleration = 100.0
@@ -24,12 +27,12 @@ thin_texture = ExtResource("3_dqkch")
 player_mesh = NodePath("MeshInstance2D")
 player_collision = NodePath("CollisionShape2D")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1348764219]
-position = Vector2(0, 5.465714e-15)
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1348764219 groups=["player"]]
+position = Vector2(1, 1)
 rotation = 3.1415927
-mesh = SubResource("PlaneMesh_qhqgy")
+mesh = SubResource("PlaneMesh_g2els")
 texture = ExtResource("3_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1897673777]
-position = Vector2(-0.5769232, 0)
-shape = SubResource("RectangleShape2D_dqkch")
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_qhqgy")

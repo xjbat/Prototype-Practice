@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://buvdxqs3gfxf7"]
+
+[ext_resource type="PackedScene" uid="uid://bjfe8t7yte515" path="res://Scenes/world_audio.tscn" id="1_0lml3"]
+[ext_resource type="PackedScene" uid="uid://boy1u2l6v5lir" path="res://Scenes/player.tscn" id="1_x42e6"]
+[ext_resource type="PackedScene" uid="uid://csxy6rnew80cf" path="res://Scenes/shrink_collectible.tscn" id="2_6761a"]
+[ext_resource type="PackedScene" uid="uid://soxheoyxi3m0" path="res://Scenes/grow_collectible.tscn" id="3_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://cfo4r3fnfd4fk" path="res://Scenes/level_change_collectable.tscn" id="4_oc4kc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcg8s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyfjp"]
+
+[node name="Level 1" type="Node2D" unique_id=2059983578]
+
+[node name="world_audio" parent="." unique_id=618443931 instance=ExtResource("1_0lml3")]
+
+[node name="wall1" type="StaticBody2D" parent="." unique_id=847690767]
+position = Vector2(-207.99998, 0)
+rotation = 1.5707964
+scale = Vector2(58.56086, 0.59289634)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="wall1" unique_id=1495422419]
+modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
+rotation = 3.1415927
+scale = Vector2(19.886282, 19.88628)
+mesh = SubResource("BoxMesh_vcg8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=1785730272]
+shape = SubResource("RectangleShape2D_kyfjp")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1809876735]
+scale = Vector2(58.56086, 0.59289634)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="floor" unique_id=148920880]
+modulate = Color(0.41568628, 0.3254902, 0.39215687, 1)
+rotation = 3.1415927
+scale = Vector2(19.886282, 19.88628)
+mesh = SubResource("BoxMesh_vcg8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1537799747]
+shape = SubResource("RectangleShape2D_kyfjp")
+
+[node name="Player" parent="." unique_id=953066698 instance=ExtResource("1_x42e6")]
+z_index = 1
+position = Vector2(0, -27)
+fat_acceleration = 20.0
+fat_deceleration = 20.0
+
+[node name="Shrink Collectible" parent="." unique_id=56697476 instance=ExtResource("2_6761a")]
+position = Vector2(-142, -71)
+
+[node name="Grow Collectible" parent="." unique_id=1391926658 instance=ExtResource("3_sk5k4")]
+position = Vector2(36, -68)
+
+[node name="Grow Collectible2" parent="." unique_id=1932064995 instance=ExtResource("3_sk5k4")]
+position = Vector2(-51, -69)
+
+[node name="Level change" parent="." unique_id=1013849507 instance=ExtResource("4_oc4kc")]
+position = Vector2(262, -22)
+
+[node name="Label" type="Label" parent="." unique_id=58053624]
+offset_left = -27.0
+offset_top = -138.0
+offset_right = 27.0
+offset_bottom = -115.0
+text = "Level 1"

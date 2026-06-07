@@ -3,6 +3,8 @@ extends Node
 enum PlayerStates {THIN, FAT}
 var playerState = PlayerStates.THIN
 
+var world_audio : Node2D
+
 @warning_ignore("unused_signal")
 signal grow
 @warning_ignore("unused_signal")
@@ -13,7 +15,6 @@ signal activate_platform
 signal deactivate_platform
 @onready var root = get_node("../root")   
 
-#hacky fix so level one loads first
 var starting_index = 0 # should normallly be set to 0
 var scene_index = starting_index
 var current_scene
@@ -40,3 +41,15 @@ func reset_scene():
 
 func _on_restart_button_pressed() -> void:
 	reset_scene()
+		
+#returns the audio player so you can connect signals, As seen in the level change collectible. 
+func play_audio(file: AudioStreamMP3, position: Vector2, volume: float):
+	var audio = world_audio.play_audio(file, position, volume)
+	return audio
+	
+func pause_scene():
+	current_scene.process_mode = Node.ProcessMode.PROCESS_MODE_DISABLED
+	
+# kinda useless
+func play_scene():
+	current_scene.process_mode = Node.ProcessMode.PROCESS_MODE_INHERIT

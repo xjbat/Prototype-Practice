@@ -23,6 +23,10 @@ Global="*uid://bae4pahhmeuk3"
 
 project/assembly_name="Prototyping Project"
 
+[global_group]
+
+player=""
+
 [input]
 
 up={

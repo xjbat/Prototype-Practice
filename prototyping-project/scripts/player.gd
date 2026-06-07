@@ -53,7 +53,7 @@ func movement(jump_velocity, speed, acceleration, deceleration):
 		velocity.x = move_toward(velocity.x, 0, deceleration)
 #TODO If a player scales in a small space weird behavior can occur, we should consider adding a check of some sort
 func scale_player(size: float):
-	print(player_mesh.scale.x, " : ", player_mesh.scale.y, " : ", player_collision.shape.radius)
+	#print(player_mesh.scale.x, " : ", player_mesh.scale.y, " : ", player_collision.shape.radius)
 	player_mesh.scale.x = size * 2
 	player_mesh.scale.y = size * 2
 	player_collision.shape.radius = size
@@ -67,7 +67,8 @@ func set_player_fat():
 	player_collision.scale.x = 3.0
 	player_mesh.texture = fat_texture
 	Global.playerState = Global.PlayerStates.FAT
-	
+
+
 func _ready() -> void:
 	#make make sure player in thin when starting
 	set_player_thin()
