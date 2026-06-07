@@ -33,12 +33,7 @@ func movement(jump_velocity, speed, acceleration, deceleration):
 	
 	var direction = Input.get_axis("left", "right")
 	if direction:
-		var air_punishment
-		if is_on_floor():
-			air_punishment = 1
-		else:
-			air_punishment = 0.6
-		velocity.x = move_toward(velocity.x, direction * speed * air_punishment, acceleration * air_punishment)
+		velocity.x = move_toward(velocity.x, direction * speed, acceleration)
 		
 		# Godot doesn't flip x so flip y and rotate
 		if (direction == 1.0):

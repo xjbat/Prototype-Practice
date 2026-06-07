@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://boy1u2l6v5lir"]
 
-[ext_resource type="Script" uid="uid://bwnbjs0is3nnm" path="res://scripts/player.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://bwnbjs0is3nnm" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://iq4jvw87myp8" path="res://Sprites/fat-man.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://craeruemirrrs" path="res://Sprites/thin-man.png" id="3_dqkch"]
 
@@ -16,11 +16,12 @@ rotation = 3.1415927
 scale = Vector2(1, -1)
 script = ExtResource("1_v0iea")
 fat_jump_velocity = -250.0
-fat_speed = 200.0
+fat_speed = 300.0
 fat_acceleration = 2.0
 fat_deceleration = 2.0
 fat_texture = ExtResource("2_qhqgy")
-thin_jump_velocity = -400.0
+thin_jump_velocity = -450.0
+thin_speed = 100.0
 thin_acceleration = 100.0
 thin_deceleration = 100.0
 thin_texture = ExtResource("3_dqkch")
