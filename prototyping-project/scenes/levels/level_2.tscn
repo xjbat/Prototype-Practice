@@ -36,11 +36,15 @@ offset_left = -27.0
 offset_top = -138.0
 offset_right = 27.0
 offset_bottom = -115.0
+text = "Or too thin..."
 
 [node name="Void" parent="." unique_id=269038081 instance=ExtResource("5_8qukl")]
 
 [node name="Shrink Collectible" parent="." unique_id=56697476 instance=ExtResource("2_l37oo")]
 position = Vector2(67, -23)
+
+[node name="Shrink Collectible2" parent="." unique_id=658507371 instance=ExtResource("2_l37oo")]
+position = Vector2(169, -25)
 
 [node name="wall1" parent="." unique_id=1320140272 instance=ExtResource("7_3p04p")]
 position = Vector2(-327.00003, 3)

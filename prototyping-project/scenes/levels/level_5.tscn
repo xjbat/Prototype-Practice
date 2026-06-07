@@ -11,20 +11,26 @@
 [node name="Level 4" type="Node2D" unique_id=2059983578]
 
 [node name="floor" parent="." unique_id=589596903 instance=ExtResource("1_vvoq0")]
-position = Vector2(-150, 132.99998)
+position = Vector2(-478, 135.00002)
+
+[node name="floor3" parent="." unique_id=360307004 instance=ExtResource("1_vvoq0")]
+position = Vector2(773, 135.00002)
 
 [node name="floor2" parent="." unique_id=109401761 instance=ExtResource("1_vvoq0")]
-position = Vector2(707, 52.000004)
+position = Vector2(810, 52.000004)
 
 [node name="Player" parent="." unique_id=953066698 instance=ExtResource("2_tqnj0")]
 z_index = 1
-position = Vector2(-288, 93.999985)
+position = Vector2(-281, 101)
 fat_jump_velocity = -180.0
 fat_acceleration = 20.0
 fat_deceleration = 20.0
 
 [node name="Grow Collectible" parent="." unique_id=1391926658 instance=ExtResource("3_dwyms")]
 position = Vector2(-99, 93)
+
+[node name="Grow Collectible3" parent="." unique_id=854829204 instance=ExtResource("3_dwyms")]
+position = Vector2(-116, -142)
 
 [node name="Grow Collectible2" parent="." unique_id=1997179461 instance=ExtResource("3_dwyms")]
 position = Vector2(98, -130)
@@ -43,6 +49,9 @@ offset_bottom = -115.0
 [node name="Shrink Collectible" parent="." unique_id=56697476 instance=ExtResource("6_j14br")]
 position = Vector2(226, 92)
 
+[node name="Shrink Collectible2" parent="." unique_id=1508530335 instance=ExtResource("6_j14br")]
+position = Vector2(-145, 21)
+
 [node name="wall1" parent="." unique_id=1320140272 instance=ExtResource("7_0y7y4")]
 position = Vector2(-327.00003, 3)
 
@@ -50,7 +59,7 @@ position = Vector2(-327.00003, 3)
 position = Vector2(327, 57)
 
 [node name="wall3" parent="." unique_id=1678440701 instance=ExtResource("7_0y7y4")]
-position = Vector2(-96, -21)
+position = Vector2(-96, -20)
 scale = Vector2(6.561, 0.53)
 
 [node name="wall5" parent="." unique_id=488635042 instance=ExtResource("7_0y7y4")]
@@ -63,15 +72,10 @@ position = Vector2(-300, -25)
 rotation = 0.0
 scale = Vector2(5, 0.53)
 
-[node name="wall7" parent="." unique_id=1047508850 instance=ExtResource("7_0y7y4")]
-position = Vector2(-137, -90)
-rotation = 0.0
-scale = Vector2(5, 0.53)
-
 [node name="wall9" parent="." unique_id=1836700486 instance=ExtResource("7_0y7y4")]
 position = Vector2(-101, -89)
 rotation = 0.0
-scale = Vector2(5, 0.53)
+scale = Vector2(5.5, 0.53)
 
 [node name="wall10" parent="." unique_id=1188009871 instance=ExtResource("7_0y7y4")]
 position = Vector2(96, -184)
@@ -79,12 +83,12 @@ rotation = 0.0
 scale = Vector2(100, 0.53)
 
 [node name="wall11" parent="." unique_id=283409321 instance=ExtResource("7_0y7y4")]
-position = Vector2(77, 51.999992)
+position = Vector2(429.99997, 51.999992)
 rotation = 0.0
 scale = Vector2(5, 0.53)
 
 [node name="wall12" parent="." unique_id=1219197611 instance=ExtResource("7_0y7y4")]
-position = Vector2(-46.999992, -31.999992)
+position = Vector2(51, -18)
 rotation = 0.0
 scale = Vector2(5, 0.53)
 
@@ -93,8 +97,17 @@ position = Vector2(103.99999, -80)
 rotation = 0.0
 scale = Vector2(5, 0.53)
 
+[node name="wall14" parent="." unique_id=829771379 instance=ExtResource("7_0y7y4")]
+position = Vector2(158.00002, 50)
+rotation = 0.0
+scale = Vector2(5, 0.53)
+
 [node name="wall4" parent="." unique_id=1888763774 instance=ExtResource("7_0y7y4")]
-position = Vector2(126, -16)
+position = Vector2(119, -46.000004)
+scale = Vector2(3.75, 0.53)
+
+[node name="wall7" parent="." unique_id=647605961 instance=ExtResource("7_0y7y4")]
+position = Vector2(233, -12.999999)
 scale = Vector2(6.561, 0.53)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=356845941]
