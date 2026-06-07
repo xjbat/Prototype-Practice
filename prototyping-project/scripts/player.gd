@@ -18,7 +18,7 @@ extends CharacterBody2D
 @export var player_mesh : MeshInstance2D
 @export var player_collision : CollisionShape2D
 
-const player_scale_val := 1.3
+const player_scale_val := 1
 
 #TODO make this less fucked, good enough for now though!
 func fat_movement():

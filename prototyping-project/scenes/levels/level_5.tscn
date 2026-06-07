@@ -26,11 +26,8 @@ fat_deceleration = 20.0
 [node name="Grow Collectible" parent="." unique_id=1391926658 instance=ExtResource("3_dwyms")]
 position = Vector2(-99, 93)
 
-[node name="Grow Collectible3" parent="." unique_id=333150201 instance=ExtResource("3_dwyms")]
-position = Vector2(-119, -10)
-
 [node name="Grow Collectible2" parent="." unique_id=1997179461 instance=ExtResource("3_dwyms")]
-position = Vector2(98, -107)
+position = Vector2(98, -130)
 
 [node name="Level change" parent="." unique_id=1013849507 instance=ExtResource("4_6xwso")]
 position = Vector2(280, 32)
@@ -93,11 +90,6 @@ scale = Vector2(5, 0.53)
 
 [node name="wall13" parent="." unique_id=1779387267 instance=ExtResource("7_0y7y4")]
 position = Vector2(103.99999, -80)
-rotation = 0.0
-scale = Vector2(5, 0.53)
-
-[node name="wall8" parent="." unique_id=752910615 instance=ExtResource("7_0y7y4")]
-position = Vector2(-82, 9.999996)
 rotation = 0.0
 scale = Vector2(5, 0.53)
 
