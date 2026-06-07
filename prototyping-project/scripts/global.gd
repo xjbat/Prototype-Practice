@@ -15,7 +15,7 @@ signal activate_platform
 signal deactivate_platform
 @onready var root = get_node("../root")   
 
-var starting_index = 4 # should normallly be set to 0
+var starting_index = 0 # should normallly be set to 0
 var scene_index = starting_index
 var current_scene
 

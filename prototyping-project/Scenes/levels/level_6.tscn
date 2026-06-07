@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://fha78rxfewq3"]
 
+[ext_resource type="Texture2D" uid="uid://gca78jbgry2y" path="res://Sprites/happy-man.png" id="1_y2agi"]
+[ext_resource type="Texture2D" uid="uid://d15ahuxe03noi" path="res://Sprites/Dumble.png" id="2_g44gb"]
+
 [node name="level_6" type="Node2D" unique_id=365335617]
 
 [node name="Label" type="Label" parent="." unique_id=1216334629]
@@ -8,3 +11,43 @@ offset_top = -12.0
 offset_right = 99.0
 offset_bottom = 11.0
 text = "Congratulations, you win!"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=95893584]
+position = Vector2(-68, -46)
+texture = ExtResource("1_y2agi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=321508381]
+position = Vector2(-14, -66)
+texture = ExtResource("2_g44gb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1178335719]
+position = Vector2(8, -40)
+texture = ExtResource("2_g44gb")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=2044977844]
+position = Vector2(-19, -30)
+texture = ExtResource("2_g44gb")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=498643963]
+position = Vector2(45, -66)
+texture = ExtResource("2_g44gb")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=2117071002]
+position = Vector2(40, -38)
+texture = ExtResource("2_g44gb")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=1119330739]
+position = Vector2(74, -24)
+texture = ExtResource("2_g44gb")
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=1465844803]
+position = Vector2(76, -65)
+texture = ExtResource("2_g44gb")
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=563096686]
+position = Vector2(14, -80)
+texture = ExtResource("2_g44gb")
+
+[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=771324342]
+position = Vector2(63, -84)
+texture = ExtResource("2_g44gb")
